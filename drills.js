@@ -167,8 +167,8 @@ console.log(getProductsOfAllExceptAtIndex(example));
 // Output: true
 
 function areRotations(str1, str2) {
-  const s3 = str1 + str1;
-  return s3.includes(str2);
+  const concatStr1 = str1 + str1;
+  return concatStr1.includes(str2);
 }
 
 // function areRotations2(str1, str2) {
