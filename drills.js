@@ -156,6 +156,59 @@ console.log(getProductsOfAllExceptAtIndex(example));
 
 // 7. 2D Array
 
+// Bi-Dimensional Array
+
+const exampleArray = [
+  [1,0,1,1,0],
+  [0,1,1,1,0],
+  [1,1,1,1,1],
+  [1,0,1,1,1],
+  [1,1,1,1,1]
+];
+
+function traversal(arr) {
+  let zeroCol = [];
+  let zeroRow = [];
+
+  // scans matrix to find positions of 0s in rows and cols
+  for (let i = 0; i < arr.length; i++) {
+    let row = arr[i];
+    for (let j = 0; j<row.length; j++) {
+      const item = row[j];
+      if (item === 0) {
+        zeroRow[i] = true;
+        zeroCol[j] = true;
+      }
+    }
+  }
+  
+  //update value
+  for (let i = 0; i < arr.length; i++) {
+    let row = arr[i];
+    for (let j = 0; j<row.length; j++) {
+      if (zeroRow[i] || zeroCol[j]) {
+        row[j] = 0;
+      }
+    }
+  }
+}
+
+traversal(exampleArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // 8. String rotation
@@ -167,8 +220,9 @@ console.log(getProductsOfAllExceptAtIndex(example));
 // Output: true
 
 function areRotations(str1, str2) {
-  const concatStr1 = str1 + str1;
-  return concatStr1.includes(str2);
+  const s3 = str1 + str1;
+  console.log(s3);
+  return s3.includes(str2);
 }
 
 // function areRotations2(str1, str2) {
@@ -184,6 +238,9 @@ function areRotations(str1, str2) {
 
 console.log(areRotations('amazon','azonam'));
 console.log(areRotations('amazon','azonma'));
+console.log(areRotations('elephant','lephante'));
+console.log(areRotations('elephant','ephantel'));
+
 
 
 
