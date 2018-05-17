@@ -136,12 +136,55 @@ console.log(removeChar('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
 // Input:[1, 3, 9, 4]
 // Output:[108, 36, 12, 27]
 
-// function getProductsOfAllExceptAtIndex(arr) {
-//   let leftArr;
-//   let rightArr;
-//   for (let i = 0; i < arr.length; i++) {
-        
+function getProductsOfAllExceptAtIndex(arr) {
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let total = 1;
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] != arr[j]) {
+        total *= arr[j];
+      }
+    }
+    newArr.push(total);
+  }
+  return newArr;
+}
+
+const example = [1, 3, 9, 4];
+console.log(getProductsOfAllExceptAtIndex(example));
+
+
+// 7. 2D Array
+
+
+
+// 8. String rotation
+
+// Input: amazon, azonma
+// Output: False
+
+// Input: amazon, azonam
+// Output: true
+
+function areRotations(str1, str2) {
+  const s3 = str1 + str1;
+  return s3.includes(str2);
+}
+
+// function areRotations2(str1, str2) {
+//   const s3 = str1 + str1;
+//   // first check to see if strings are same length
+//   if (str1.length !== str2.length) {
+//     return false;
+//   } 
+//   else if (s3.includes(str2)) {
+//     return true;
 //   }
-//   const index = arr.indexOf();
 // }
+
+console.log(areRotations('amazon','azonam'));
+console.log(areRotations('amazon','azonma'));
+
+
+
 
